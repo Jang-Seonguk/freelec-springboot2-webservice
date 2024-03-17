@@ -1,7 +1,7 @@
 com/jojoldu/book/springboot/config/auth/SecurityConfig.java
  com.jojoldu.book.springboot.config.auth.SecurityConfig
-com/jojoldu/book/springboot/Application.java
- com.jojoldu.book.springboot.Application
+com/jojoldu/book/springboot/config/JpaConfig.java
+ com.jojoldu.book.springboot.config.JpaConfig
 com/jojoldu/book/springboot/config/auth/LoginUserArgumentResolver.java
  com.jojoldu.book.springboot.config.auth.LoginUserArgumentResolver
 com/jojoldu/book/springboot/web/IndexController.java
@@ -49,5 +49,5 @@ com/jojoldu/book/springboot/config/auth/CustomOAuth2UserService.java
 com/jojoldu/book/springboot/config/auth/dto/OAuthAttributes.java
  com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes
  com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
-com/jojoldu/book/springboot/config/JpaConfig.java
- com.jojoldu.book.springboot.config.JpaConfig
+com/jojoldu/book/springboot/Application.java
+ com.jojoldu.book.springboot.Application
