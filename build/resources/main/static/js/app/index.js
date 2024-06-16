@@ -1,7 +1,7 @@
 var main = {
     init : function () {
     var _this = this;
-    $('#btn-save').on('click', function () { _this.save();
+    $('#btn-save').on('click', function () { _this.post();
     });
 
     $('#btn-update').on('click', function () { _this.update();
@@ -9,6 +9,23 @@ var main = {
 
     $('#btn-delete').on('click', function () { _this.delete();
     });
+    },
+
+    post : function () {
+        var cpu = $('#cpu').val();
+        var mainboard = $('#mainboard').val();
+        var memory = $('#memory').val();
+        var storage = $('#storage').val();
+        var power = $('#power').val();
+
+        document.getElementById('td_cpu').innerHTML = cpu;
+        document.getElementById('td_mainboard').innerHTML = mainboard;
+        document.getElementById('td_memory').innerHTML = memory;
+        document.getElementById('td_storage').innerHTML = storage;
+        document.getElementById('td_power').innerHTML = power;
+
+
+
     },
 
     save : function () {
@@ -69,6 +86,8 @@ var main = {
         });
     }
 };
+
+
 
 main.init();
 

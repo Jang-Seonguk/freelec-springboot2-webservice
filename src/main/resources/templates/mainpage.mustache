@@ -1,0 +1,83 @@
+{{>layout/header}}
+
+<h1>조립 페이지</h1>
+
+<div class="col-md-12">
+    <div class="container">
+        <div class="col-md-6">
+            <form action="#">
+                <div class="form-group">
+                    <label for="title">CPU</label>
+                    <select name="text" class="form-control" id="cpu">
+                        <option value="select">Select a CPU</option>
+                        <option value="Intel i2">Intel i2</option>
+                        <option value="Ryzen 7500F">Ryzen 7500F</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">메인보드</label>
+                    <select name="text" class="form-control" id="mainboard">
+                        <option value="select">Select a Mainboard</option>
+                        <option value="A320m">A320m</option>
+                        <option value="B450m">B450m</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">메모리</label>
+                    <select name="text" class="form-control" id="memory">
+                        <option value="select">Select a Memory</option>
+                        <option value="16GB">16GB</option>
+                        <option value="32GB">32GB</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">저장소</label>
+                    <select name="text" class="form-control" id="storage">
+                        <option value="select">Select a Storage</option>
+                        <option value="SSD 1TB">SSD 1TB</option>
+                        <option value="SSD 2TB">SSD 2TB</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">파워</label>
+                    <select name="text" class="form-control" id="power">
+                        <option value="select">Select a Power</option>
+                        <option value="Classic 600w">Classic 600w</option>
+                        <option value="Classic 700w">Classic 700w</option>
+                    </select>
+                </div>
+
+            </form>
+            <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+        </div>
+    </div>
+
+
+
+    <div class="margin">
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>CPU</th>
+                <th>메인보드</th>
+                <th>메모리</th>
+                <th>저장소</th>
+                <th>파워</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td id="td_cpu"></td>
+                    <td id="td_mainboard"></td>
+                    <td id="td_memory"></td>
+                    <td id="td_storage"></td>
+                    <td id="td_power"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{>layout/footer}}

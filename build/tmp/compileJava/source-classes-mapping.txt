@@ -34,8 +34,8 @@ com/jojoldu/book/springboot/web/PostsApiController.java
  com.jojoldu.book.springboot.web.PostsApiController
 com/jojoldu/book/springboot/service/posts/PostsService.java
  com.jojoldu.book.springboot.service.posts.PostsService
-com/jojoldu/book/springboot/web/IndexController.java
- com.jojoldu.book.springboot.web.IndexController
+com/jojoldu/book/springboot/config/auth/SecurityConfig.java
+ com.jojoldu.book.springboot.config.auth.SecurityConfig
 com/jojoldu/book/springboot/config/auth/dto/SessionUser.java
  com.jojoldu.book.springboot.config.auth.dto.SessionUser
 com/jojoldu/book/springboot/web/ProfileController.java
@@ -51,5 +51,18 @@ com/jojoldu/book/springboot/web/HelloController.java
 com/jojoldu/book/springboot/domain/user/User.java
  com.jojoldu.book.springboot.domain.user.User
  com.jojoldu.book.springboot.domain.user.User$UserBuilder
-com/jojoldu/book/springboot/config/auth/SecurityConfig.java
- com.jojoldu.book.springboot.config.auth.SecurityConfig
+com/jojoldu/book/springboot/web/IndexController.java
+ com.jojoldu.book.springboot.web.IndexController
+com/jojoldu/book/springboot/web/dto/PartsListResponseDto.java
+ com.jojoldu.book.springboot.web.dto.PartsListResponseDto
+com/jojoldu/book/springboot/web/dto/PartsResponseDto.java
+ com.jojoldu.book.springboot.web.dto.PartsResponseDto
+com/jojoldu/book/springboot/web/dto/PartsUpdateRequestDto.java
+ com.jojoldu.book.springboot.web.dto.PartsUpdateRequestDto
+ com.jojoldu.book.springboot.web.dto.PartsUpdateRequestDto$PartsUpdateRequestDtoBuilder
+com/jojoldu/book/springboot/web/dto/PartsSaveRequestDto.java
+ com.jojoldu.book.springboot.web.dto.PartsSaveRequestDto
+ com.jojoldu.book.springboot.web.dto.PartsSaveRequestDto$PartsSaveRequestDtoBuilder
+com/jojoldu/book/springboot/domain/posts/Parts.java
+ com.jojoldu.book.springboot.domain.posts.Parts
+ com.jojoldu.book.springboot.domain.posts.Parts$PartsBuilder

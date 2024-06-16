@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import javax.servlet.http.HttpSession;
-
 
 @RequiredArgsConstructor
 @Controller
@@ -43,5 +41,6 @@ public class IndexController {
         return "posts-update";
     }
 
-
+    @GetMapping("/mainpage")
+    public String mainpage(){ return "mainpage";}
 }
