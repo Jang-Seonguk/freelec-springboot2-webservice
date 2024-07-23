@@ -8,22 +8,28 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
-    private String title;
-    private String content;
-    private String author;
+    private String cpu;
+    private String mainboard;
+    private String memory;
+    private String storage;
+    private String power;
 
     @Builder
-    public PostsSaveRequestDto(String title, String content, String author) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
+    public PostsSaveRequestDto(String cpu, String mainboard, String memory, String storage, String power) {
+        this.cpu = cpu;
+        this.mainboard = mainboard;
+        this.memory = memory;
+        this.storage = storage;
+        this.power = power;
     }
 
     public Posts toEntity() {
         return Posts.builder()
-                .title(title)
-                .content(content)
-                .author(author)
+                .cpu(cpu)
+                .mainboard(mainboard)
+                .memory(memory)
+                .storage(storage)
+                .power(power)
                 .build();
     }
 }

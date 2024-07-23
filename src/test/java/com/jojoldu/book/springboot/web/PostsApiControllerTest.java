@@ -89,12 +89,18 @@ public class PostsApiControllerTest {
     public void Posts_등록된다() throws Exception {
 
         //given
-        String title = "title";
-        String content = "content";
+        //String title = "title";
+        String cpu = "cpu";
+        String mainboard = "mainboard";
+        String memory = "memory";
+        String storage = "storage";
+        String power = "power";
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
-                .title(title)
-                .content(content)
-                .author("author")
+                .cpu(cpu)
+                .mainboard(mainboard)
+                .memory(memory)
+                .storage(storage)
+                .power(power)
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts";
@@ -112,8 +118,11 @@ public class PostsApiControllerTest {
         //assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
         List<Posts> all = postsRepository.findAll();
-        assertThat(all.get(0).getTitle()).isEqualTo(title);
-        assertThat(all.get(0).getContent()).isEqualTo(content);
+        assertThat(all.get(0).getCpu()).isEqualTo(cpu);
+        assertThat(all.get(0).getMainboard()).isEqualTo(mainboard);
+        assertThat(all.get(0).getMemory()).isEqualTo(memory);
+        assertThat(all.get(0).getStorage()).isEqualTo(storage);
+        assertThat(all.get(0).getPower()).isEqualTo(power);
 
     }
 
@@ -122,18 +131,28 @@ public class PostsApiControllerTest {
     public void Posts_수정된다() throws Exception {
         //given
         Posts savedPosts = postsRepository.save(Posts.builder()
-                .title("title")
-                .content("content")
-                .author("author")
+                .cpu("cpu")
+                .mainboard("mainboard")
+                .memory("memory")
+                .power("power")
+                .storage("storage")
                 .build());
 
         Long updateId = savedPosts.getId();
-        String expectedTitle = "title2";
-        String expectedContent = "content2";
+        //String expectedTitle = "title2";
+        //String expectedContent = "content2";
+        String expectedCpu = "cpu1";
+        String expectedMainboard = "mainboard1";
+        String expectedMemory = "memory1";
+        String expectedPower = "power1";
+        String expectedStorage = "storage1";
 
         PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
-                .title(expectedTitle)
-                .content(expectedContent)
+                .cpu(expectedCpu)
+                .mainboard(expectedMainboard)
+                .memory(expectedMemory)
+                .power(expectedPower)
+                .storage(expectedStorage)
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
@@ -153,7 +172,10 @@ public class PostsApiControllerTest {
         //assertThat(responseEntity.getBody()).isGreaterThan(0L);
 
         List<Posts> all = postsRepository.findAll();
-        assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
-        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
+        assertThat(all.get(0).getCpu()).isEqualTo(expectedCpu);
+        assertThat(all.get(0).getMainboard()).isEqualTo(expectedMainboard);
+        assertThat(all.get(0).getMemory()).isEqualTo(expectedMemory);
+        assertThat(all.get(0).getStorage()).isEqualTo(expectedStorage);
+        assertThat(all.get(0).getPower()).isEqualTo(expectedPower);
     }
 }

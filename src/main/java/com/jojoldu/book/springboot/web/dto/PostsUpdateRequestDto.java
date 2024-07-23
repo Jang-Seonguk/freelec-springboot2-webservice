@@ -7,13 +7,19 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class PostsUpdateRequestDto {
-    private String title;
-    private String content;
+    private String cpu;
+    private String mainboard;
+    private String memory;
+    private String storage;
+    private String power;
 
     @Builder
-    public PostsUpdateRequestDto(String title, String content) {
-        this.title = title;
-        this.content = content;
+    public PostsUpdateRequestDto(String cpu, String mainboard, String memory, String storage, String power) {
+        this.cpu = cpu;
+        this.mainboard = mainboard;
+        this.memory = memory;
+        this.storage = storage;
+        this.power = power;
     }
 
 

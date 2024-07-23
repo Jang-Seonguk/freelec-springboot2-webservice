@@ -34,13 +34,18 @@ public class PostsRepositoryTest {
     @Test
     public void 게시글저장_불러오기() {
         //given
-        String title = "테스트 게시글";
-        String content = "테스트 본문";
+        String cpu = "테스트 cpu";
+        String mainboard = "테스트 mainboard";
+        String memory = "테스트 memory";
+        String storage = "테스트 storage";
+        String power = "테스트 power";
 
         postsRepository.save(Posts.builder()
-                .title(title)
-                .content(content)
-                .author("jojoldu@gmail.com")
+                .cpu(cpu)
+                .mainboard(mainboard)
+                .memory(memory)
+                .storage(storage)
+                .power(power)
                 .build());
 
         //when
@@ -48,8 +53,11 @@ public class PostsRepositoryTest {
 
         //then
         Posts posts = postsList.get(0);
-        assertThat(posts.getTitle()).isEqualTo(title);
-        assertThat(posts.getContent()).isEqualTo(content);
+        assertThat(posts.getCpu()).isEqualTo(cpu);
+        assertThat(posts.getMainboard()).isEqualTo(mainboard);
+        assertThat(posts.getMemory()).isEqualTo(memory);
+        assertThat(posts.getStorage()).isEqualTo(storage);
+        assertThat(posts.getPower()).isEqualTo(power);
     }
 
     @Test
@@ -57,9 +65,11 @@ public class PostsRepositoryTest {
         //given
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
         postsRepository.save(Posts.builder()
-                .title("title")
-                .content("content")
-                .author("author")
+                .cpu("cpu")
+                .mainboard("mainboard")
+                .memory("memory")
+                .storage("storage")
+                .power("power")
                 .build());
 
         //when

@@ -12,23 +12,42 @@ var main = {
     },
 
     post : function () {
-        var cpu = $('#cpu').val();
-        var mainboard = $('#mainboard').val();
-        var memory = $('#memory').val();
-        var storage = $('#storage').val();
-        var power = $('#power').val();
+        // var cpu = $('#cpu').val();
+        // var mainboard = $('#mainboard').val();
+        // var memory = $('#memory').val();
+        // var storage = $('#storage').val();
+        // var power = $('#power').val();
+        //
+        // document.getElementById('td_cpu').innerHTML = cpu;
+        // document.getElementById('td_mainboard').innerHTML = mainboard;
+        // document.getElementById('td_memory').innerHTML = memory;
+        // document.getElementById('td_storage').innerHTML = storage;
+        // document.getElementById('td_power').innerHTML = power;
+        //<td id="td_mainboard"></td>
 
-        document.getElementById('td_cpu').innerHTML = cpu;
-        document.getElementById('td_mainboard').innerHTML = mainboard;
-        document.getElementById('td_memory').innerHTML = memory;
-        document.getElementById('td_storage').innerHTML = storage;
-        document.getElementById('td_power').innerHTML = power;
+        var data = {
+            cpu: $('#cpu').val(),
+            mainboard: $('#mainboard').val(),
+            memory: $('#memory').val(),
+            storage: $('#storage').val(),
+            power: $('#power').val()
+        };
 
-
-
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/posts',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function () {
+            alert('글이 등록되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
     },
 
-    save : function () {
+    save: function () {
         var data = {
             title : $('#title').val(),
             author : $('#author').val(),
@@ -90,4 +109,6 @@ var main = {
 
 
 main.init();
+
+
 
