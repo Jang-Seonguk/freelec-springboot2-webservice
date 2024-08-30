@@ -1,0 +1,78 @@
+{{>layout/header}}
+
+
+<div class="col-md-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sign-in-up">
+                    <form class="form-group">
+                        <input type="text" id="cpu" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">CPU</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="mainboard" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Mainboard</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="gpu" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Graphics Card</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="memory" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Memory</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="storage" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Storage</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="power" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Power</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="cooler" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Cooler</label>
+                    </form>
+
+                    <form class="form-group">
+                        <input type="text" id="computercase" class="form-control" required readonly>
+                        <label for="inputField" class="form-label">Case</label>
+                    </form>
+
+                </div>
+
+                <a href="/" role="button" class="btn btn-secondary">취소</a>
+            </div>
+
+            <div class="col-md-6">
+                <div class="margin">
+                    <!-- 목록 출력 영역 -->
+
+                    <table class="table table-horizontal table-bordered">
+                        <thead class="thead-strong">
+                        <tr>
+                            <th>POST</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="tbody">
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{{>layout/footer}}
