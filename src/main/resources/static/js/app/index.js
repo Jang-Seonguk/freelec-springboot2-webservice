@@ -1,6 +1,6 @@
-function updateInput(part, item) {
-    document.getElementById(part).value = item;
-}
+// function updateInput(part, item) {
+//     document.getElementById(part).value = item;
+// }
 
 var main = {
     init : function () {
@@ -35,26 +35,26 @@ var main = {
     },
 
     show : function (value) {
-
-        $.ajax({
-            type: 'GET',
-            url: '/api/v1/posts',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8'
-        }).done(function (posts) {
-
-            let container = $('#tbody');
-            let userData = "";
-
-            posts.forEach(function (item) {
-                userData += '<div onclick="updateInput(\'' + value + '\', \'' + item[value] + '\')">' +
-                    '<p>' + item[value] + '</p>' +
-                    '</div><hr>';
-            });
-            container.html(userData);
-        }).fail(function (error) {
-            alert("에러입니다");
-        });
+        //
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/api/v1/posts',
+        //     dataType: 'json',
+        //     contentType: 'application/json; charset=utf-8'
+        // }).done(function (posts) {
+        //
+        //     let container = $('#tbody');
+        //     let userData = "";
+        //
+        //     posts.forEach(function (item) {
+        //         userData += '<div onclick="updateInput(\'' + value + '\', \'' + item[value] + '\')">' +
+        //             '<p>' + item[value] + '</p>' +
+        //             '</div><hr>';
+        //     });
+        //     container.html(userData);
+        // }).fail(function (error) {
+        //     alert("에러입니다");
+        // });
     },
 
 
