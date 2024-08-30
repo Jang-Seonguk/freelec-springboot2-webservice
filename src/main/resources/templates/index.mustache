@@ -50,6 +50,7 @@
             </form>
             <button type="button" class="btn btn-primary" id="btn-save">등록</button>
             <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <a href="/temp" role="button" class="btn btn-secondary">임시</a>
         </div>
     </div>
 
@@ -70,14 +71,7 @@
             </thead>
             <tbody id="tbody">
             {{#posts}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td>{{cpu}}</a></td>
-                    <td>{{mainboard}}</td>
-                    <td>{{memory}}</td>
-                    <td>{{storage}}</td>
-                    <td>{{power}}</td>
-                </tr>
+
             {{/posts}}
             </tbody>
         </table>

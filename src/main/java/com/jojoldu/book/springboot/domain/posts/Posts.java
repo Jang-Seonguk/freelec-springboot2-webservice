@@ -23,25 +23,34 @@ public class Posts extends BaseTimeEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String cpu;
     private String mainboard;
+    private String gpu;
     private String memory;
     private String storage;
     private String power;
+    private String cooler;
+    private String computercase;
 
     @Builder
-    public Posts(String cpu, String mainboard, String memory, String storage, String power) {
+    public Posts(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
         this.cpu = cpu;
         this.mainboard = mainboard;
+        this.gpu = gpu;
         this.memory = memory;
         this.storage = storage;
         this.power = power;
+        this.cooler = cooler;
+        this.computercase = computercase;
     }
 
-    public void update(String cpu, String mainboard, String memory, String storage, String power) {
+    public void update(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
         this.cpu = cpu;
         this.mainboard = mainboard;
+        this.gpu = gpu;
         this.memory = memory;
         this.storage = storage;
         this.power = power;
+        this.cooler = cooler;
+        this.computercase = computercase;
     }
 }
 

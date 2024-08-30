@@ -44,12 +44,17 @@ public class PostsService {
 
 //    public PostsResponseDto findById (Long id) {
 //        Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+//        return new PostsResponseDto(entity);
 //
+//    }
+
+//    public PostsResponseDto findAll () {
+//        Posts entity = postsRepository.findAll();
 //        return new PostsResponseDto(entity);
 //    }
 
     @Transactional(readOnly = true)
-    public List<PostsListResponseDto> findAllDesc () {
-        return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
+    public List<PostsListResponseDto> findAllAsc () {
+        return postsRepository.findAllAsc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
     }
 }

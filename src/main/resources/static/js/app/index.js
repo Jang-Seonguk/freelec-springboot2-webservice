@@ -1,6 +1,11 @@
+function updateInput(part, item) {
+    document.getElementById(part).value = item;
+}
+
 var main = {
     init : function () {
     var _this = this;
+
     $('#btn-save').on('click', function () { _this.post();
     });
 
@@ -9,32 +14,62 @@ var main = {
 
     $('#btn-delete').on('click', function () { _this.delete();
     });
+
+    $('#cpu').on('click', function () { _this.show('cpu');
+    });
+    $('#mainboard').on('click', function () { _this.show("mainboard");
+    });
+    $('#gpu').on('click', function () { _this.show("gpu");
+    });
+    $('#memory').on('click', function () { _this.show("memory");
+    });
+    $('#storage').on('click', function () { _this.show("storage");
+    });
+    $('#power').on('click', function () { _this.show("power");
+    });
+    $('#cooler').on('click', function () { _this.show("cooler");
+    });
+    $('#computercase').on('click', function () { _this.show("computercase");
+    });
+
     },
 
-    post : function () {
+    show : function (value) {
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/v1/posts',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (posts) {
+
+            let container = $('#tbody');
+            let userData = "";
+
+            posts.forEach(function (item) {
+                userData += '<div onclick="updateInput(\'' + value + '\', \'' + item[value] + '\')">' +
+                    '<p>' + item[value] + '</p>' +
+                    '</div><hr>';
+            });
+            container.html(userData);
+        }).fail(function (error) {
+            alert("에러입니다");
+        });
+    },
+
+
+    post: function () {
         // var cpu = $('#cpu').val();
         // var mainboard = $('#mainboard').val();
         // var memory = $('#memory').val();
         // var storage = $('#storage').val();
         // var power = $('#power').val();
         //
-        // document.getElementById('td_cpu').innerHTML = cpu;
-        // document.getElementById('td_mainboard').innerHTML = mainboard;
-        // document.getElementById('td_memory').innerHTML = memory;
-        // document.getElementById('td_storage').innerHTML = storage;
-        // document.getElementById('td_power').innerHTML = power;
-        //<td id="td_mainboard"></td>
 
-        var data = {
-            cpu: $('#cpu').val(),
-            mainboard: $('#mainboard').val(),
-            memory: $('#memory').val(),
-            storage: $('#storage').val(),
-            power: $('#power').val()
-        };
+
 
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: '/api/v1/posts',
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
@@ -105,8 +140,6 @@ var main = {
         });
     }
 };
-
-
 
 main.init();
 

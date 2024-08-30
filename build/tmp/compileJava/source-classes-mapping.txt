@@ -3,8 +3,8 @@ com/jojoldu/book/springboot/config/auth/dto/OAuthAttributes.java
  com.jojoldu.book.springboot.config.auth.dto.OAuthAttributes$OAuthAttributesBuilder
 com/jojoldu/book/springboot/web/dto/PostsResponseDto.java
  com.jojoldu.book.springboot.web.dto.PostsResponseDto
-com/jojoldu/book/springboot/domain/posts/PostsRepository.java
- com.jojoldu.book.springboot.domain.posts.PostsRepository
+com/jojoldu/book/springboot/config/auth/LoginUser.java
+ com.jojoldu.book.springboot.config.auth.LoginUser
 com/jojoldu/book/springboot/web/dto/PostsSaveRequestDto.java
  com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto
  com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
@@ -45,11 +45,11 @@ com/jojoldu/book/springboot/domain/BaseTimeEntity.java
  com.jojoldu.book.springboot.domain.BaseTimeEntity
 com/jojoldu/book/springboot/web/dto/PostsListResponseDto.java
  com.jojoldu.book.springboot.web.dto.PostsListResponseDto
-com/jojoldu/book/springboot/config/auth/LoginUser.java
- com.jojoldu.book.springboot.config.auth.LoginUser
 com/jojoldu/book/springboot/web/PostsApiController.java
  com.jojoldu.book.springboot.web.PostsApiController
 com/jojoldu/book/springboot/service/posts/PostsService.java
  com.jojoldu.book.springboot.service.posts.PostsService
+com/jojoldu/book/springboot/domain/posts/PostsRepository.java
+ com.jojoldu.book.springboot.domain.posts.PostsRepository
 com/jojoldu/book/springboot/web/IndexController.java
  com.jojoldu.book.springboot.web.IndexController

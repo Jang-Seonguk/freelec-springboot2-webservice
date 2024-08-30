@@ -9,16 +9,22 @@ public class PostsResponseDto {
     private Long id;
     private String cpu;
     private String mainboard;
+    private String gpu;
     private String memory;
     private String storage;
     private String power;
+    private String cooler;
+    private String computercase;
 
     public PostsResponseDto(Posts entity) {
         this.id = entity.getId();
         this.cpu = entity.getCpu();
         this.mainboard = entity.getMainboard();
+        this.gpu = entity.getGpu();
         this.memory = entity.getMemory();
         this.storage = entity.getStorage();
         this.power = entity.getPower();
+        this.cooler = entity.getCooler();
+        this.computercase = entity.getComputercase();
     }
 }

@@ -6,15 +6,78 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        .container {
+        .container_left {
           display: grid;
-          place-items: center;
+          place-items: left;
         }
+        .box1 {
+            float:left;
+            width:200px;
+            height:100px;
+            background-color:#234234;
+        }
+
+        .box2 {
+            display:inline-block;
+            width:200px;
+            height:100px;
+            background-color:#666666;
+            margin-left:10px;
+        }
+
 
         .margin {
             margin-top: 50px;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-group {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 1rem;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+            background: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-bottom-color: #007bff;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            color: #aaa;
+            pointer-events: none;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus + .form-label,
+        .form-control:not(:placeholder-shown) + .form-label {
+            top: 0;
+            font-size: 0.75rem;
+            color: #007bff;
+            transform: translateY(-100%);
+        }
     </style>
 </head>
 <body>
