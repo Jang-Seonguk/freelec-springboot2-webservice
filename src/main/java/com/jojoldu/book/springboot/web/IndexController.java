@@ -19,17 +19,17 @@ public class IndexController {
     private final PostsService postsService;
     // private final HttpSession httpSession;
 
-    @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("posts", postsService.findAllAsc());
-        // SessionUser user = (SessionUser) httpSession.getAttribute("user");
-//        if (user != null) {
-//            model.addAttribute("userName", user.getName());
-//        }
-        return "index";
-    }
+//    @GetMapping("/")
+//    public String index(Model model, @LoginUser SessionUser user) {
+//        model.addAttribute("posts", postsService.findAllAsc());
+//        // SessionUser user = (SessionUser) httpSession.getAttribute("user");
+////        if (user != null) {
+////            model.addAttribute("userName", user.getName());
+////        }
+//        return "index";
+//    }
 
-    @GetMapping("/temp")
+    @GetMapping("/")
     public String temp(Model model) {
         model.addAttribute("posts", postsService.findAllAsc());
         return "temp";
