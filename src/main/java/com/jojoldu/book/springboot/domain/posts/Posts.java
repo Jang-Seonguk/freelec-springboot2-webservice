@@ -16,9 +16,9 @@ import javax.persistence.Id;
 @Entity
 public class Posts extends BaseTimeEntity {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String cpu;
