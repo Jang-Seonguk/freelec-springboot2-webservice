@@ -32,6 +32,19 @@ var main = {
     $('#computercase').on('click', function () { _this.show("computercase");
     });
 
+    $('#search-box').on('input', function () { _this.findList();
+    });
+
+    },
+
+    findList : function () {
+        var searchTerm = $('#search-box').val().toLowerCase();
+        var temp = $("p").filter(function() {
+            return $(this).text().toLowerCase().indexOf(searchTerm) !== -1;
+        });
+
+        $("p").hide();
+        $(temp).show();
     },
 
     show : function (value) {
