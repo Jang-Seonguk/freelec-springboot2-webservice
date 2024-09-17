@@ -32,18 +32,18 @@ var main = {
     $('#computercase').on('click', function () { _this.show("computercase");
     });
 
-    $('#search-box').on('input', function () { _this.findList();
+    $('#search-input').on('input', function () { _this.findList();
     });
 
     },
 
     findList : function () {
-        var searchTerm = $('#search-box').val().toLowerCase();
-        var temp = $("p").filter(function() {
-            return $(this).text().toLowerCase().indexOf(searchTerm) !== -1;
+        var searchPart = $('#search-input').val().toLowerCase();
+        var temp = $('#tbody-id p').filter(function() {
+            return $(this).text().toLowerCase().indexOf(searchPart) !== -1;
         });
 
-        $("p").hide();
+        $('#tbody-id p').hide();
         $(temp).show();
     },
 
@@ -56,13 +56,13 @@ var main = {
             contentType: 'application/json; charset=utf-8'
         }).done(function (posts) {
 
-            let container = $('#tbody');
+            let container = $('#tbody-id');
             let userData = "";
 
             posts.forEach(function (item) {
                 userData += '<div onclick="updateInput(\'' + value + '\', \'' + item[value] + '\')">' +
                     '<p>' + item[value] + '</p>' +
-                    '</div><hr>';
+                    '</div>';
             });
             container.html(userData);
         }).fail(function (error) {
