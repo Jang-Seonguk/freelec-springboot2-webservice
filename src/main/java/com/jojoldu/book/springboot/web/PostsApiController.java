@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.*;
 public class PostsApiController {
     private final PostsService postsService;
 
-    @PostMapping("/api/v1/posts")
-    public Long save(@RequestBody PostsSaveRequestDto requestDto) {
-        return postsService.save(requestDto);
-    }
+//    @PostMapping("/api/v1/posts")
+//    public Long save(@RequestBody PostsSaveRequestDto requestDto) {
+//        return postsService.save(requestDto);
+//    }
 
     @GetMapping("/api/v1/posts")
     public Object temp(Model model) {

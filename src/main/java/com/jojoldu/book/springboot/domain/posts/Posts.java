@@ -21,38 +21,71 @@ public class Posts extends BaseTimeEntity {
     private Long id;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String cpu;
-    private String mainboard;
-    private String gpu;
-    private String memory;
-    private String storage;
-    private String power;
-    private String cooler;
-    private String computercase;
+    private String name;
+    private String vendor;
+    private String part;
+
 
     @Builder
-    public Posts(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
-        this.cpu = cpu;
-        this.mainboard = mainboard;
-        this.gpu = gpu;
-        this.memory = memory;
-        this.storage = storage;
-        this.power = power;
-        this.cooler = cooler;
-        this.computercase = computercase;
+    public Posts(String name, String vendor, String part) {
+        this.name = name;
+        this.vendor = vendor;
+        this.part = part;
     }
 
-    public void update(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
-        this.cpu = cpu;
-        this.mainboard = mainboard;
-        this.gpu = gpu;
-        this.memory = memory;
-        this.storage = storage;
-        this.power = power;
-        this.cooler = cooler;
-        this.computercase = computercase;
-    }
+//        public void update(String vendor, String part) {
+//        this.vendor = vendor;
+//        this.part = part;
+//    }
 }
+
+
+
+//
+//@Getter
+//@NoArgsConstructor
+//@Entity
+//public class Posts extends BaseTimeEntity {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//
+//    @Column(columnDefinition = "TEXT", nullable = false)
+//    private String cpu;
+//    private String mainboard;
+//    private String gpu;
+//    private String memory;
+//    private String storage;
+//    private String power;
+//    private String cooler;
+//    private String computercase;
+//
+//    @Builder
+//    public Posts(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
+//        this.cpu = cpu;
+//        this.mainboard = mainboard;
+//        this.gpu = gpu;
+//        this.memory = memory;
+//        this.storage = storage;
+//        this.power = power;
+//        this.cooler = cooler;
+//        this.computercase = computercase;
+//    }
+//
+//    public void update(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
+//        this.cpu = cpu;
+//        this.mainboard = mainboard;
+//        this.gpu = gpu;
+//        this.memory = memory;
+//        this.storage = storage;
+//        this.power = power;
+//        this.cooler = cooler;
+//        this.computercase = computercase;
+//    }
+//}
+
+
 
 
 

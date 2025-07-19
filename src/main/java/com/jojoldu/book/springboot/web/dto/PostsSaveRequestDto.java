@@ -8,37 +8,59 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
-    private String cpu;
-    private String mainboard;
-    private String gpu;
-    private String memory;
-    private String storage;
-    private String power;
-    private String cooler;
-    private String computercase;
+    private String vendor;
+    private String part;
 
     @Builder
-    public PostsSaveRequestDto(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
-        this.cpu = cpu;
-        this.mainboard = mainboard;
-        this.gpu = gpu;
-        this.memory = memory;
-        this.storage = storage;
-        this.power = power;
-        this.cooler = cooler;
-        this.computercase = computercase;
+    public PostsSaveRequestDto(String vendor, String part) {
+        this.vendor = vendor;
+        this.part = part;
     }
 
     public Posts toEntity() {
         return Posts.builder()
-                .cpu(cpu)
-                .mainboard(mainboard)
-                .gpu(gpu)
-                .memory(memory)
-                .storage(storage)
-                .power(power)
-                .cooler(cooler)
-                .computercase(computercase)
+                .vendor(vendor)
+                .part(part)
                 .build();
     }
 }
+
+
+
+//@Getter
+//@NoArgsConstructor
+//public class PostsSaveRequestDto {
+//    private String cpu;
+//    private String mainboard;
+//    private String gpu;
+//    private String memory;
+//    private String storage;
+//    private String power;
+//    private String cooler;
+//    private String computercase;
+//
+//    @Builder
+//    public PostsSaveRequestDto(String cpu, String mainboard, String gpu, String memory, String storage, String power, String cooler, String computercase) {
+//        this.cpu = cpu;
+//        this.mainboard = mainboard;
+//        this.gpu = gpu;
+//        this.memory = memory;
+//        this.storage = storage;
+//        this.power = power;
+//        this.cooler = cooler;
+//        this.computercase = computercase;
+//    }
+//
+//    public Posts toEntity() {
+//        return Posts.builder()
+//                .cpu(cpu)
+//                .mainboard(mainboard)
+//                .gpu(gpu)
+//                .memory(memory)
+//                .storage(storage)
+//                .power(power)
+//                .cooler(cooler)
+//                .computercase(computercase)
+//                .build();
+//    }
+//}
