@@ -27,6 +27,8 @@ public class Posts extends BaseTimeEntity {
 
 
 
+
+
     @Builder
     public Posts(String name, String vendor, String part) {
         this.name = name;
