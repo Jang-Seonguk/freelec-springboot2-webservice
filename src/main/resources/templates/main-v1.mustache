@@ -1,0 +1,151 @@
+{{> layout/header}}
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">PartCheck</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#checker">Reliability Checker</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Find Reliable Computer Parts</h1>
+            <p>Make informed decisions with our comprehensive reliability database</p>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search for computer parts..." id="searchInput">
+                <button class="search-btn" onclick="searchParts()">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility Checker -->
+    <section class="reliability-checker" id="checker">
+        <div class="container">
+            <h2 class="section-title">PC Build Compatibility Checker</h2>
+            <div class="checker-container">
+                <div class="build-panel">
+                    <h3>Select Your Components</h3>
+                    <div class="component-grid">
+                        <div class="component-selector">
+                            <label>🧠 CPU:</label>
+                            <div class="component-display" onclick="openPartSelector('cpu')">
+                                <span id="cpuDisplay">Click to select CPU...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>🔌 Motherboard:</label>
+                            <div class="component-display" onclick="openPartSelector('mainboard')">
+                                <span id="mainboardDisplay">Click to select Motherboard...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>🎮 GPU:</label>
+                            <div class="component-display" onclick="openPartSelector('gpu')">
+                                <span id="gpuDisplay">Click to select GPU...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>💾 Memory:</label>
+                            <div class="component-display" onclick="openPartSelector('memory')">
+                                <span id="memoryDisplay">Click to select Memory...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>💿 Storage:</label>
+                            <div class="component-display" onclick="openPartSelector('storage')">
+                                <span id="storageDisplay">Click to select Storage...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>⚡ Power Supply:</label>
+                            <div class="component-display" onclick="openPartSelector('power')">
+                                <span id="powerDisplay">Click to select PSU...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>❄️ Cooler:</label>
+                            <div class="component-display" onclick="openPartSelector('cooler')">
+                                <span id="coolerDisplay">Click to select Cooler...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+
+                        <div class="component-selector">
+                            <label>📦 Case:</label>
+                            <div class="component-display" onclick="openPartSelector('case')">
+                                <span id="caseDisplay">Click to select Case...</span>
+                                <span class="arrow">→</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="check-compatibility-btn" onclick="runCompatibilityCheck()">
+                        🔍 Check Full Compatibility
+                    </button>
+                </div>
+
+                <div class="compatibility-results" id="compatibilityResults">
+                    <div class="parts-selector-header">
+                        <h3 id="partsTitle">Select a Component</h3>
+                    </div>
+
+                    <div class="parts-search-container">
+                        <input type="text"
+                               class="parts-search-input"
+                               id="partsSearchInput"
+                               placeholder="Search parts..."
+                               oninput="searchParts()">
+                    </div>
+
+                    <div class="parts-list-container" id="partsListContainer">
+                        <div style="text-align: center; padding: 2rem; color: #9ca3af;">
+                            <p>Click a component type to see available parts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Panel for Part Selection -->
+    <div class="overlay" id="overlay" onclick="closeSidePanel()"></div>
+    <div class="side-panel" id="sidePanel">
+        <div class="side-panel-header">
+            <div class="side-panel-title" id="sidePanelTitle">Select Component</div>
+            <button class="close-panel" onclick="closeSidePanel()">×</button>
+        </div>
+        <div class="side-panel-content">
+            <div class="search-parts">
+                <input type="text" placeholder="Search parts..." id="partSearchInput" oninput="filterParts()">
+            </div>
+            <div class="parts-list" id="partsList">
+                <!-- Parts will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCheck. Built with Spring Boot & powered by reliability data.</p>
+        </div>
+    </footer>
+
+{{> layout/footer}}
