@@ -14,12 +14,6 @@ public class IndexController {
 
     private final PartService partsService;
 
-//    @GetMapping("/")
-//    public String index(Model model) {
-//        model.addAttribute("posts", postsService.findAllAsc());
-//        return "main";
-//    }
-
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", partsService.getAllParts());
