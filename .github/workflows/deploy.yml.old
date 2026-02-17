@@ -1,8 +1,8 @@
 name: Github Action CI # Workflow 이름
 
-on: # Workflow를 자동으로 트리거 하기 위한 이벤트
-  push:
-    branches: ["master"] # master 브랜치에서 동작
+#on: # Workflow를 자동으로 트리거 하기 위한 이벤트
+#  push:
+#    branches: ["master"] # master 브랜치에서 동작
 
 env: # 환경 변수 설정, 보안이 필요한 환경 변수는 Secret repository에 저장
   S3_BUCKET_NAME: webservice-buildbucket
