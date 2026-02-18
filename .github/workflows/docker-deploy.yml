@@ -84,8 +84,8 @@ jobs:
             --query "Command.CommandId")
           
           echo "Command ID: $COMMAND_ID"
-          
-        # 상태 체크 (최대 5분)
+
+      # 상태 체크 (최대 5분)
           for i in {1..30}; do
             STATUS=$(aws ssm get-command-invocation \
               --command-id $COMMAND_ID \
