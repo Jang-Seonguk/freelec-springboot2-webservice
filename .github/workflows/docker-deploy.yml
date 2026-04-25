@@ -35,30 +35,6 @@ jobs:
             seongukjang/webservice:latest
             seongukjang/webservice:${{ github.sha }}
 
-#      # 5. EC2에 배포
-#      - name: Deploy to EC2
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: ${{ secrets.EC2_HOST }}
-#          username: ec2-user
-#          key: ${{ secrets.EC2_SSH_KEY }}
-#          script: |
-#            # 기존 컨테이너 중지 및 제거
-#            docker stop webservice || true
-#            docker rm webservice || true
-#
-#            # 최신 이미지 pull
-#            docker pull seongukjang/webservice:latest
-#
-#            # 새 컨테이너 실행
-#            docker run -d \
-#              --name webservice \
-#              -p 8080:8080 \
-#              --restart unless-stopped \
-#              seongukjang/webservice:latest
-#
-#            # 사용하지 않는 이미지 정리
-#            docker image prune -f
       # 5. AWS 자격 증명 설정
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -73,7 +49,8 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            --parameters commands="docker stop webservice || true","docker rm webservice || true","docker pull seongukjang/webservice:latest","docker run -d --name webservice -p 8080:8080 --restart unless-stopped seongukjang/webservice:latest","docker image prune -f" \
+            # --parameters commands="docker stop webservice || true","docker rm webservice || true","docker pull seongukjang/webservice:latest","docker run -d --name webservice -p 8080:8080 --restart unless-stopped seongukjang/webservice:latest","docker image prune -f" \
+            --parameters commands="kubectl set image deployment/webservice webservice=seongukjang/webservice:${{ github.sha }} --namespace=default && kubectl rollout status deployment/webservice --namespace=default --timeout=120s" \
             --output text \
             --query "Command.CommandId")
           
