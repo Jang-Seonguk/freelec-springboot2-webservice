@@ -49,7 +49,6 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            # --parameters commands="docker stop webservice || true","docker rm webservice || true","docker pull seongukjang/webservice:latest","docker run -d --name webservice -p 8080:8080 --restart unless-stopped seongukjang/webservice:latest","docker image prune -f" \
             --parameters commands="kubectl set image deployment/webservice webservice=seongukjang/webservice:${{ github.sha }} --namespace=default && kubectl rollout status deployment/webservice --namespace=default --timeout=120s" \
             --output text \
             --query "Command.CommandId")
