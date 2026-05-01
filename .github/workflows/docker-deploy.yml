@@ -49,7 +49,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
-            --parameters commands="kubectl set image deployment/webservice webservice=seongukjang/webservice:${{ github.sha }} --namespace=default && kubectl rollout status deployment/webservice --namespace=default --timeout=120s" \
+            --parameters commands="export KUBECONFIG=/etc/kubernetes/admin.conf && kubectl set image deployment/webservice webservice=seongukjang/webservice:${{ github.sha }} --namespace=default && kubectl rollout status deployment/webservice --namespace=default --timeout=120s" \
             --output text \
             --query "Command.CommandId")
           
